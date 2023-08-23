@@ -2,8 +2,17 @@ import React, { useEffect } from 'react'
 import './App.css'
 import SearchIcon from './search.svg'
 import { useState } from 'react'
+import MovieCard from './MovieCard'
 
 const API_URL = 'http://www.omdbapi.com/?apikey=3a5e702f';
+
+const movie = {
+  "Poster" : "https://m.media-amazon.com/images/M/MV5BYThjYzcyYzItNTVjNy00NDk0LTgwMWQtYjMwNmNlNWJhMzMyXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+  "Title" : "Batman v Superman: Dawn of Justice",
+  "Type" : "movie",
+  "Year" : "2016",
+  "imdbID" : "tt2975590"
+}
 
 const App = () => {
   const searchMovie = async (title) => {
@@ -22,8 +31,16 @@ const App = () => {
           type='text' 
           placeholder='Search for a movie...' 
           value={'Superman'}
+          onChange={() => {}}
         />
-        <img src={SearchIcon} alt='Search Icon' />
+        <img 
+          src={SearchIcon} 
+          alt='Search Icon' 
+          onClick={() => {}}
+        />
+      </div>
+      <div className='container'>
+        <MovieCard movie={movie} />
       </div>
     </div>
   )
